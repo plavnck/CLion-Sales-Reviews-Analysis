@@ -268,8 +268,6 @@ import rake_nltk
 from rake_nltk import Rake
 import pandas as pd
 
-nltk.download('stopwords')
-nltk.download('punkt')
 
 df = pd.read_csv('QueryResults (2).csv')
 keywords_dict = dict()
