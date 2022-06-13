@@ -228,15 +228,15 @@ def predict_revenue(df_cl):
                                         mode='lines',
                                         name='Predicted revenue'))
     prediction_fig.update_layout(title_text='Прогноз выручки на 2021 год', title_x=0.5)
-    bar_prediction_chart = pd.DataFrame(columns=['Year', 'Revenue'])
+    bar_prediction_chart = pd.DataFrame(columns=['Year', 'Revenue', 'color'])
     bar_prediction_chart = bar_prediction_chart.append(
-        {'Year': '2019', 'Revenue': train.loc[train.date < '2020-01-01']['final_price_usd'].sum()}, ignore_index=True)
+        {'color': 'Real', 'Year': '2019', 'Revenue': train.loc[train.date < '2020-01-01']['final_price_usd'].sum()}, ignore_index=True)
     bar_prediction_chart = bar_prediction_chart.append(
-        {'Year': '2020', 'Revenue': train.loc[train.date >= '2020-01-01']['final_price_usd'].sum()}, ignore_index=True)
-    bar_prediction_chart = bar_prediction_chart.append({'Year': '2021', 'Revenue': test['MW_Prediction'].sum()},
+        {'color': 'Real', 'Year': '2020', 'Revenue': train.loc[train.date >= '2020-01-01']['final_price_usd'].sum()}, ignore_index=True)
+    bar_prediction_chart = bar_prediction_chart.append({'color': 'Predicted', 'Year': '2021', 'Revenue': test['MW_Prediction'].sum()},
                                                        ignore_index=True)
-    bar_prediction_chart_fig = px.bar(bar_prediction_chart, x='Year', y='Revenue',
-                                      title='Прогнозная выручка CLion на 2021 год  в сравнении с реальной')
+    bar_prediction_chart_fig = px.bar(bar_prediction_chart, x='Year', y='Revenue', color='color',
+                                      title='Выручка CLion по годам + прогноз на 2021')
     bar_prediction_chart_fig.update_layout(
         font=dict(
             size=10,
