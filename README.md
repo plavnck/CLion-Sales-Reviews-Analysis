@@ -1,7 +1,10 @@
 # CLion-Sales-Reviews-Analysis
-Creation of analysis report for imaginary CLion Team, showing the financial results sales forecasting using Xgboost, Stack Overflow reviews parsing &amp; Keyword-extraction with rake_nltk
-![Alt-текст](https://ibb.co/jr2N9bP "Заглавная страница")
-![Alt-текст](https://i.ibb.co/VBkGqhm/Screenshot-2022-06-13-at-19-04-16.png)
+Creation of analysis dashboard in a report format for imaginary CLion Team, showing the financial results sales forecasting using Xgboost, Stack Overflow reviews parsing &amp; Keyword-extraction with rake_nltk
+
+## Screenshots of dashboard
+-----
+![Alt-текст](https://i.ibb.co/kSf7V5s/Screenshot-2022-06-13-at-19-04-01.png "Заглавная страница")
+![Alt-текст](https://i.ibb.co/VBkGqhm/Screenshot-2022-06-13-at-19-04-16.png "Страница с прогнозом выручки")
 
 
 ## Installation
